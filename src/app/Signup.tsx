@@ -9,7 +9,7 @@ const Signup = () => {
     email: string;
     password: string;
     address: string;
-  }>({
+  }> ({
     username: "",
     email: "",
     password: "",
@@ -24,8 +24,10 @@ const Signup = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
-    setMessage("");
+    
+     setMessage("");
     setError("");
 
     try {
@@ -34,6 +36,7 @@ const Signup = () => {
       });
       setMessage(res.data.message || "Signup successful!");
       setFormData({ username: "", email: "", password: "", address: "" });
+
       alert("Signup successful")
     } catch (err: any) {
       setError(err.response?.data?.msg || "Signup failed");
@@ -53,8 +56,7 @@ const Signup = () => {
           value={formData.username}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border rounded"
-        />
+          className="w-full px-4 py-2 border rounded"/>
         <input
           type="email"
           name="email"
@@ -62,8 +64,7 @@ const Signup = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border rounded"
-        />
+          className="w-full px-4 py-2 border rounded"/>
         <input
           type="password"
           name="password"
@@ -71,8 +72,7 @@ const Signup = () => {
           value={formData.password}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border text-white rounded"
-        />
+          className="w-full px-4 py-2 border text-white rounded"/>
         <input
           type="text"
           name="address"
@@ -80,12 +80,10 @@ const Signup = () => {
           value={formData.address}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border text-white rounded"
-        />
+          className="w-full px-4 py-2 border text-white rounded"/>
         <button
           type="submit"
-          className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded hover:bg-blue-700"
-        >
+          className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded hover:bg-blue-700">
           Sign Up
         </button>
       </form>
