@@ -1,9 +1,11 @@
-import SignupLogin from "./SignupLogin";
- function App() {
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <SignupLogin />
-    </div>
-  );
+import Navbar from "@/components/Navbar"
+
+function App() {
+  return(
+    <>
+    {/* HI App */}
+    <Navbar/>
+    </>
+  )
 }
-export default App;
+export default App
