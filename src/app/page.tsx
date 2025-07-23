@@ -1,10 +1,12 @@
-import Navbar from "@/components/Navbar"
+// import Navbar from "../components/Navbar"
+
+import Signup from "./Signup"
 
 function App() {
   return(
     <>
-    {/* HI App */}
-    <Navbar/>
+    {/* <Navbar/> */}
+    <Signup/>
     </>
   )
 }

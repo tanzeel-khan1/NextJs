@@ -11,15 +11,20 @@ const Signup = () => {
     address: string;
   }> ({
     username: "",
-    email: "",
+         email: "",
+
     password: "",
+
     address: "",
+
   });
 
   const [message, setMessage] = useState<string>("");
+
   const [error, setError] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -31,13 +36,14 @@ const Signup = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:7000/api/auth/signup", formData, {
+      const res = await axios.post("http://localhost:8000/api/auth/signup", formData, {
         withCredentials: true,
       });
       setMessage(res.data.message || "Signup successful!");
       setFormData({ username: "", email: "", password: "", address: "" });
 
       alert("Signup successful")
+
     } catch (err: any) {
       setError(err.response?.data?.msg || "Signup failed");
     }
@@ -46,12 +52,17 @@ const Signup = () => {
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-black rounded shadow">
       <h2 className="text-2xl text-blue-800 font-bold mb-4 text-center">Signup</h2>
+
       {message && <p className="text-green-600 text-center mb-4">{message}</p>}
-      {error && <p className="text-red-600 text-center mb-4">{error}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
+
+             {error && <p className="text-red-600 text-center mb-4">{error}</p>}
+              <form onSubmit={handleSubmit} className="space-y-4">
         <input
+
+
           type="text"
           name="username"
+
           placeholder="Username"
           value={formData.username}
           onChange={handleChange}
@@ -61,6 +72,7 @@ const Signup = () => {
           type="email"
           name="email"
           placeholder="Email"
+              
           value={formData.email}
           onChange={handleChange}
           required
@@ -86,7 +98,8 @@ const Signup = () => {
           className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded hover:bg-blue-700">
           Sign Up
         </button>
-      </form>
+
+               </form>
     </div>
   );
 };
