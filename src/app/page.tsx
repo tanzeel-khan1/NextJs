@@ -1,13 +1,9 @@
-// import Navbar from "../components/Navbar"
+import Navbar from "@/components/Navbar";
 
-import Signup from "./Signup"
-
-function App() {
-  return(
+export default function App() {
+  return (
     <>
-    {/* <Navbar/> */}
-    <Signup/>
+    <Navbar/>
     </>
-  )
+  );
 }
-export default App
