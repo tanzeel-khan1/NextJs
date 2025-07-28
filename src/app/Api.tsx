@@ -7,6 +7,7 @@ type Products = {
     price: string;
     description: string;
     service: string;
+    
 }
 const Api = () => {
     const [data, setData] = useState<Products[]>([])
@@ -19,7 +20,7 @@ const Api = () => {
     }, [])
  return (
   <div className="p-6 bg-gray-100 min-h-screen">
-    
+
     <h1 className="text-4xl font-bold text-center text-blue-900 mb-8">Products</h1>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
