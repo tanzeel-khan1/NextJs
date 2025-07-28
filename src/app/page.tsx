@@ -1,9 +1,12 @@
-import Navbar from "@/components/Navbar";
+import React from 'react'
+import Api from './Api'
 
-export default function App() {
+const page = () => {
   return (
     <>
-    <Navbar/>
+    <Api/>
     </>
-  );
+  )
 }
+
+export default page
