@@ -1,43 +1,45 @@
 'use client';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-
+import React from 'react'
 type Products = {
-    img: string;
-    price: string;
-    description: string;
-    service: string;
-    
-}
+        img: string;
+        price: string;
+        service: string;
+     }
+ const fetchProducts = async (): Promise<Products[]> => {
+        const res = await axios.get('http://localhost:5000/api/data/service');
+        return res.data;
+     }
 const Api = () => {
-    const [data, setData] = useState<Products[]>([])
+    const {data, isLoading, isError} = useQuery<Products[]>({
+     queryKey: ['products'],
+     queryFn: fetchProducts,
+    })
+    if(isLoading)return <h1>loading</h1>
+    if(isError) return <h1>error</h1>
+  return (
+   <div  className=" bg-red-700 p-6 bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
+  <h1 className="text-5xl font-bold text-center text-blue-900 mb-12 underline decoration-blue-400">
+    Featured Products
+  </h1>
 
-    useEffect(() =>{
-        axios
-        .get('http://localhost:5000/api/data/service')
-        .then((res) => setData(res.data))
-        .catch((err) => console.log(err))
-    }, [])
- return (
-  <div className="p-6 bg-gray-100 min-h-screen">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
+    {data?.map((item, index) => (
+        
+      <div key={index} className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+        <img src={item.img}  alt={item.service}className="h-48 w-full object-cover"/>
+        <div className="p-5">
 
-    <h1 className="text-4xl font-bold text-center text-blue-900 mb-8">Products</h1>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-      {data.map((item, index) => (
-        <div key={index} className="bg-white rounded-2xl shadow-lg p-4 hover:shadow-xl transition-all duration-300">
-          <img src={item.img} className="h-40 w-full object-cover rounded-xl mb-4"/>
-          <h2 className="text-xl font-semibold text-green-700 mb-2">Rs. {item.price}</h2>
-         
-          <h3 className="text-md font-medium text-gray-800 mb-1">{item.service}</h3>
-          <p className="text-sm text-gray-600">{item.description}</p>
+          <h2 className="text-2xl font-bold text-green-700 mb-1"> Rs. {item.price}</h2>
+          <h3 className="text-lg text-gray-800 font-medium mb-2"> {item.service}</h3>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
-);
+</div>
 
+  )
 }
 
 export default Api

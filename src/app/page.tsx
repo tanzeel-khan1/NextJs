@@ -1,12 +1,22 @@
-import React from 'react'
-import Api from './Api'
+'use client';
 
-const page = () => {
+import React, { useState } from 'react';
+import Signup from './Signup';
+import Api from './Api';
+
+const Page = () => {
+  const [showApi, setShowApi] = useState(false);
+
+  const handleSignupSuccess = () => {
+    setShowApi(true);
+  };
+
   return (
     <>
-    <Api/>
+      {!showApi && <Signup onSuccess={handleSignupSuccess} />}
+      {showApi && <Api />}
     </>
-  )
-}
+  );
+};
 
-export default page
+export default Page;
