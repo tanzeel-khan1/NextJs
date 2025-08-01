@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React from 'react'
 import { useForm } from 'react-hook-form';
-
 type formData = {
   name: string;
   email: string;
   phone: string;
   password: string
 }
+
 type props = {
   onSuccess: () => void
 }
@@ -17,6 +17,7 @@ const  {
 handleSubmit,
 formState: {errors},
 reset
+
 } = useForm<formData>();
 
 const onSubmit = async (data: formData) => {
@@ -36,10 +37,8 @@ const onSubmit = async (data: formData) => {
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
       <input
         {...register('name', { required: 'Name is required' })}
-        placeholder="Name"
-      />
+        placeholder="Name"/>
       {errors.name && <span className="text-red-500">{errors.name.message}</span>}
-
       <input
         {...register('email', {
           required: 'Email is required',
@@ -49,8 +48,7 @@ const onSubmit = async (data: formData) => {
           },
         })}
         placeholder="Email"
-        type="email"
-      />
+        type="email"/>
       {errors.email && <span className="text-red-500">{errors.email.message}</span>}
 
       <input
@@ -75,14 +73,15 @@ const onSubmit = async (data: formData) => {
           },
         })}
         placeholder="Password"
-        type="password"
-      />
+        type="password"/>
       {errors.password && <span className="text-red-500">{errors.password.message}</span>}
 
       <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded">
         Sign Up
       </button>
     </form>
+
+    
     </>
   )
 }
