@@ -15,6 +15,7 @@ const Api = () => {
     const {data, isLoading, isError} = useQuery<Products[]>({
      queryKey: ['products'],
      queryFn: fetchProducts,
+     
     })
     if(isLoading)return <h1>loading</h1>
     if(isError) return <h1>error</h1>
@@ -23,14 +24,14 @@ const Api = () => {
   <h1 className="text-5xl font-bold text-center text-blue-900 mb-12 underline decoration-blue-400">
     Featured Products
   </h1>
-
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
     {data?.map((item, index) => (
-        
+    
+
+
       <div key={index} className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
         <img src={item.img}  alt={item.service}className="h-48 w-full object-cover"/>
         <div className="p-5">
-
           <h2 className="text-2xl font-bold text-green-700 mb-1"> Rs. {item.price}</h2>
           <h3 className="text-lg text-gray-800 font-medium mb-2"> {item.service}</h3>
         </div>
