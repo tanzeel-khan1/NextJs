@@ -68,14 +68,13 @@ const onSubmit = async (data: formData) => {
         {...register('password', {
           required: 'Password is required',
           minLength: {
-            value: 6,
+         value: 6,
             message: 'Password must be at least 6 characters',
           },
         })}
         placeholder="Password"
         type="password"/>
       {errors.password && <span className="text-red-500">{errors.password.message}</span>}
-
       <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded">
         Sign Up
       </button>

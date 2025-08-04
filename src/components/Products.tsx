@@ -1,3 +1,11 @@
-export default function ProductPage() {
-  return <h1>Product Page</h1>;
+import React from 'react'
+
+const products = () => {
+  return (
+    <div>
+      <h1>hello products</h1>
+    </div>
+  )
 }
+
+export default products
