@@ -1,22 +1,14 @@
-'use client';
-
-import React, { useState } from 'react';
-import Signup from './Signup';
-import Api from './Api';
-
-const Page = () => {
-  const [showApi, setShowApi] = useState(false);
-
-  const handleSignupSuccess = () => {
-    setShowApi(true);
-  };
-
+'use client'
+import React from 'react'
+import Nav from "./portfolio/Nav"
+import Part1 from "./portfolio/Part1"
+const page = () => {
   return (
-    <>
-      {!showApi && <Signup onSuccess={handleSignupSuccess} />}
-      {showApi && <Api />}
-    </>
-  );
-};
+      <>
+      <Nav />
+      <Part1/>
+      </>
+  )
+}
 
-export default Page;
+export default page
