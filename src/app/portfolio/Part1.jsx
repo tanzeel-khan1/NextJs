@@ -23,6 +23,7 @@ const Part1 = () => {
         </motion.div>
 
         <motion.div
+        
           className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
