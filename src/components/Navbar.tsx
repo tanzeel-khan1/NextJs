@@ -1,11 +1,9 @@
 'use client'
-
 import { useState } from 'react';
 import Link from 'next/link';
 
 export default function SidebarLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-
   return (
     <div className="flex h-screen">
       <aside className={`bg-gray-800 text-white p-4 space-y-4 transition-all duration-300 ${sidebarOpen ? 'w-64' : 'w-16'}`}>

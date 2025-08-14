@@ -30,7 +30,6 @@ const Api = () => {
       <div key={index} className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
         <img src={item.img}  alt={item.service}className="h-48 w-full object-cover"/>
         <div className="p-5">
-
           <h2 className="text-2xl font-bold text-green-700 mb-1"> Rs. {item.price}</h2>
           <h3 className="text-lg text-gray-800 font-medium mb-2"> {item.service}</h3>
         </div>
