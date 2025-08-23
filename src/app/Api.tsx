@@ -7,7 +7,6 @@ type Products = {
         price: string;
         service: string;
      }
-
  const fetchProducts = async (): Promise<Products[]> => {
         const res = await axios.get('http://localhost:5000/api/data/service');
         return res.data;
@@ -24,7 +23,6 @@ const Api = () => {
   <h1 className="text-5xl font-bold text-center text-blue-900 mb-12 underline decoration-blue-400">
     Featured Products
   </h1>
-
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
     {data?.map((item, index) => ( 
       <div key={index} className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
