@@ -5,7 +5,6 @@ const Part1 = () => {
   return (
     <section className="w-full bg-white py-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 h-auto md:h-[30rem]">
-        
         <motion.div
           className="w-full md:w-1/2"
           initial={{ opacity: 0, x: -50 }}
