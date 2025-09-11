@@ -63,7 +63,6 @@ const onSubmit = async (data: formData) => {
         type="tel"
       />
       {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
-
       <input
         {...register('password', {
           required: 'Password is required',
@@ -78,9 +77,7 @@ const onSubmit = async (data: formData) => {
       <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded">
         Sign Up
       </button>
-    </form>
-
-    
+    </form>    
     </>
   )
 }

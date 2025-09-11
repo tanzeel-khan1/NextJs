@@ -15,6 +15,7 @@ export default function SidebarLayout({ children }: { children: React.ReactNode 
           </button>
         </div>
 
+
         <nav className="flex flex-col space-y-2 mt-4">
           <Link href="/" className="hover:bg-gray-700 px-2 py-1 rounded">
             {sidebarOpen && 'Home'}

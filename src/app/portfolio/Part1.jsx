@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
 const Part1 = () => {
   return (
     <section className="w-full bg-white py-10">
