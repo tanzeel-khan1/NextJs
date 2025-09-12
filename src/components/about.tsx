@@ -6,5 +6,4 @@ const about = () => {
     </div>
   )
 }
-
 export default about
