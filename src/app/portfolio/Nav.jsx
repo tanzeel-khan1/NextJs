@@ -4,9 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
   return (
-    
     <motion.nav
       initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
