@@ -16,7 +16,6 @@ export default function Navbar() {
           <h1 className=" cursor-pointer text-xl sm:text-2xl font-bold text-blue-700 tracking-wide">
             Tanzeel
           </h1>
-
           <ul className="hidden md:flex gap-6 text-gray-700 font-medium text-[15px]">
             {["Experience", "About", "Projects", "Best"].map((item, index) => (
               <motion.li
