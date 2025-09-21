@@ -11,6 +11,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="w-full bg-white shadow-sm fixed top-0 z-50"
     >
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-16">
           <h1 className=" cursor-pointer text-xl sm:text-2xl font-bold text-blue-700 tracking-wide">
