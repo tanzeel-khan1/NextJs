@@ -11,6 +11,7 @@ const fetchProducts = async (): Promise<Products[]> => {
   const res = await axios.get("http://localhost:5000/api/data/service");
   return res.data;
 };
+
 const Api = () => {
   const { data, isLoading, isError } = useQuery<Products[]>({
     queryKey: ["products"],
@@ -32,8 +33,7 @@ const Api = () => {
             <img
               src={item.img}
               alt={item.service}
-              className="h-48 w-full object-cover"
-            />
+              className="h-48 w-full object-cover"/>
             <div className="p-5">
               <h2 className="text-2xl font-bold text-green-700 mb-1">
                 {" "}

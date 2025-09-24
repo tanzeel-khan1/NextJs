@@ -31,7 +31,6 @@ export default function SidebarLayout({
             href="/settings"
             className="hover:bg-gray-700 px-2 py-1 rounded"
           >
-            
             {sidebarOpen && "Settings"}
           </Link>
           <Link href="/product" className="hover:bg-gray-700 px-2 py-1 rounded">

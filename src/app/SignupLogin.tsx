@@ -33,7 +33,6 @@ function SignupLogin() {
       mode === "login"
         ? { email: formData.email, password: formData.password }
         : formData;
-
     try {
       const res = await fetch(url, {
         method: "POST",
