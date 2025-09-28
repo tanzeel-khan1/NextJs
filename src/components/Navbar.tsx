@@ -14,7 +14,6 @@ export default function SidebarLayout({
           sidebarOpen ? "w-64" : "w-16"
         }`}
       >
-        
         <div className="flex justify-between items-center">
           {sidebarOpen && <h2 className="text-xl font-bold">Nextjs</h2>}
           <button
