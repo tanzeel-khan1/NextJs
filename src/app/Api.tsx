@@ -32,7 +32,8 @@ const Api = () => {
             <img
               src={item.img}
               alt={item.service}
-              className="h-48 w-full object-cover"/>
+              className="h-48 w-full object-cover"
+            />
             <div className="p-5">
               <h2 className="text-2xl font-bold text-green-700 mb-1">
                 {" "}
