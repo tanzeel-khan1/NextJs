@@ -11,7 +11,6 @@ const fetchProducts = async (): Promise<Products[]> => {
   const res = await axios.get("http://localhost:5000/api/data/service");
   return res.data;
 };
-
 const Api = () => {
   const { data, isLoading, isError } = useQuery<Products[]>({
     queryKey: ["products"],
@@ -51,5 +50,6 @@ const Api = () => {
     </div>
   );
 };
+
 
 export default Api;
