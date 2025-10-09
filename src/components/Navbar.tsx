@@ -14,10 +14,10 @@ export default function SidebarLayout({
           sidebarOpen ? "w-64" : "w-16"
         }`}
       >
-        
         <div className="flex justify-between items-center">
           {sidebarOpen && <h2 className="text-xl font-bold">Nextjs</h2>}
           <button
+          
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="bg-gray-700 text-white px-2 py-1 rounded hover:bg-gray-600 cursor-pointer"
           >
